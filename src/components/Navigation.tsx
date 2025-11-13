@@ -12,6 +12,11 @@ const Navigation = () => {
               src="/logo.jpeg" 
               alt="CoinProfit Logo" 
               className="h-10 w-auto object-contain drop-shadow-sm"
+              onError={(e) => {
+                console.error('Logo failed to load:', e);
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+              loading="eager"
             />
             <span className="text-xl font-bold">CoinProfit</span>
           </a>
