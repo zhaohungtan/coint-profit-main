@@ -10,6 +10,7 @@ const founders = [
     experience: "Ex-Spotify, Infosys, Kohl's",
     expertise: "ML & Analytics",
     description: "Specialized in machine learning systems and predictive analytics with experience building production ML pipelines at scale.",
+    linkedin: "https://www.linkedin.com/in/harry-tan-184711202/",
   },
   {
     name: "Jack Wang",
@@ -18,6 +19,16 @@ const founders = [
     experience: "Ex-Uber",
     expertise: "Quantitative Trading",
     description: "Computer Science and Economics background with hands-on experience in high-frequency trading systems and market microstructure.",
+    linkedin: "https://www.linkedin.com/in/jack-wang1/",
+  },
+  {
+    name: "Michael Yip",
+    title: "Technical Lead",
+    education: "MEng Data Science @ UCLA",
+    experience: "Ex-IBM",
+    expertise: "Fraud and Risk",
+    description: "Expert in fraud detection and risk management systems with extensive experience in data science and machine learning applications.",
+    linkedin: "https://www.linkedin.com/in/michaelyip0219/",
   },
 ];
 
@@ -37,7 +48,7 @@ const Team = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {founders.map((founder, index) => (
               <Card 
                 key={index}
@@ -50,8 +61,20 @@ const Team = () => {
                       <div className="text-primary font-medium">{founder.title}</div>
                     </div>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Linkedin className="w-4 h-4 text-primary" />
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className="h-8 w-8"
+                        asChild
+                      >
+                        <a 
+                          href={founder.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          aria-label={`${founder.name}'s LinkedIn`}
+                        >
+                          <Linkedin className="w-4 h-4 text-primary" />
+                        </a>
                       </Button>
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <Mail className="w-4 h-4 text-primary" />
