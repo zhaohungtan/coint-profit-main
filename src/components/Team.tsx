@@ -21,15 +21,6 @@ const founders = [
     description: "Computer Science and Economics background with hands-on experience in high-frequency trading systems and market microstructure.",
     linkedin: "https://www.linkedin.com/in/jack-wang1/",
   },
-  {
-    name: "Michael Yip",
-    title: "Technical Lead",
-    education: "MEng Data Science @ UCLA",
-    experience: "Ex-IBM",
-    expertise: "Fraud and Risk",
-    description: "Expert in fraud detection and risk management systems with extensive experience in data science and machine learning applications.",
-    linkedin: "https://www.linkedin.com/in/michaelyip0219/",
-  },
 ];
 
 const Team = () => {
@@ -48,7 +39,7 @@ const Team = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {founders.map((founder, index) => (
               <Card 
                 key={index}
