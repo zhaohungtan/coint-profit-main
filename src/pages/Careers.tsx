@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Briefcase, MapPin, Clock, CheckCircle2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const Careers = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -84,6 +86,7 @@ This application was submitted through the CoinProfit careers page.
 
   return (
     <div className="min-h-screen">
+      <Navigation />
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 grid-background opacity-5" />
@@ -363,6 +366,7 @@ This application was submitted through the CoinProfit careers page.
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
