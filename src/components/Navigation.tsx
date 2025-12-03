@@ -23,16 +23,19 @@ const Navigation = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#platform" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/#platform" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Platform
             </a>
-            <a href="#validation" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/#validation" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Data Validation
             </a>
-            <a href="#team" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/#team" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Team
             </a>
-            <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/careers" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Careers
+            </a>
+            <a href="/#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </a>
           </div>
