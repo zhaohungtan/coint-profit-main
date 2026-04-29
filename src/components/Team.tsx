@@ -1,27 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const founders = [
-  {
-    name: "Harry Tan",
-    title: "Co-Founder",
-    education: "UC Berkeley '25",
-    experience: "Ex-Spotify, Infosys, Kohl's",
-    expertise: "ML & Analytics",
-    description: "Specialized in machine learning systems and predictive analytics with experience building production ML pipelines at scale.",
-    linkedin: "https://www.linkedin.com/in/harry-tan-184711202/",
-  },
-  {
-    name: "Jack Wang",
-    title: "Co-Founder",
-    education: "CS & Econ @ UC Berkeley",
-    experience: "Ex-Uber",
-    expertise: "Quantitative Trading",
-    description: "Computer Science and Economics background with hands-on experience in high-frequency trading systems and market microstructure.",
-    linkedin: "https://www.linkedin.com/in/jack-wang1/",
-  },
-];
+import { FOUNDERS } from "@/data/founders";
 
 const Team = () => {
   return (
@@ -40,7 +20,7 @@ const Team = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {founders.map((founder, index) => (
+            {FOUNDERS.map((founder, index) => (
               <Card 
                 key={index}
                 className="p-8 bg-gradient-to-br from-card to-card/50 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"

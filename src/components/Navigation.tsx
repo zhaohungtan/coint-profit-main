@@ -1,54 +1,46 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, LineChart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto px-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/85 backdrop-blur-lg">
+      <div className="container mx-auto px-4 py-3 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img 
-              src="/logo.jpeg" 
-              alt="CoinProfit Logo" 
-              className="h-10 w-auto object-contain drop-shadow-sm"
-              onError={(e) => {
-                console.error('Logo failed to load:', e);
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-              loading="eager"
-            />
-            <span className="text-xl font-bold">CoinProfit</span>
-          </a>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="/#platform" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Platform
+          <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <LineChart className="h-5 w-5" />
+            </div>
+            <div className="leading-tight">
+              <span className="block text-sm font-bold tracking-tight">CoinProfit</span>
+              <span className="block font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                TTD scenarios & desk
+              </span>
+            </div>
+          </Link>
+
+          <div className="hidden items-center gap-6 md:flex">
+            <a href="/#chart" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Chart
             </a>
-            <a href="/#validation" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Data Validation
+            <a href="/#insider" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Insider tape
             </a>
-            <a href="/#team" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Team
+            <a href="/#scenario" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Scenario desk
             </a>
-            <a href="/careers" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Careers
-            </a>
-            <a href="/#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Contact
-            </a>
+            <Link to="/careers" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              About
+            </Link>
           </div>
-          
-          {/* CTA Button */}
+
           <div className="hidden md:block">
-            <Button variant="hero" size="sm">
-              Get Started
+            <Button variant="hero" size="sm" asChild>
+              <a href="/#scenario">Run scenario</a>
             </Button>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden">
+
+          <Button variant="ghost" size="icon" className="md:hidden" aria-label="Menu">
             <Menu className="w-5 h-5" />
           </Button>
         </div>
